@@ -9,9 +9,9 @@ const Header = () => {
             <section>
             <div>
             <h2>Little Lemon</h2>
-            <h3>Chicago</h3>
-            <p>We are a family owned Mediterraneran restaurant, focused on traditional recipes servred with a modern twist.</p>
-            <Link to="/Booking"><button aria-label="On Click">Reserve Table</button></Link>
+            <h3>India</h3>
+            <p>Our family-owned Mediterranean restaurant offers traditional recipes reimagined with a modern twist, specially crafted for the Indian market.</p>
+            <Link to="/Booking"><button aria-label="On Click">Reserve Your Table</button></Link>
             </div>
             <div>
                 <img src={food1} />
