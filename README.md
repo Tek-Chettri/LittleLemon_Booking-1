@@ -17,7 +17,7 @@ Please note: The primary functionality implemented is the "Reserve a Table" feat
 
 ## Screenshots
 Here are some screeenshots of the application showcasing the Booking functionality.
-<img src="https://github.com/Tek-Chettri/LittleLemon_Booking-1/blob/main/public/homepage1.png"/>
-<img src="https://github.com/Tek-Chettri/LittleLemon_Booking-1/blob/main/public/homepage.png"/>
+<img src="https://github.com/Tek-Chettri/LittleLemon_Booking-1/blob/main/public/homepag1.png"/>
+<img src="https://github.com/Tek-Chettri/LittleLemon_Booking-1/blob/main/public/homepage2.png"/>
 
 
