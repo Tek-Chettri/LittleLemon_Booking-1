@@ -39,7 +39,6 @@
   }
 }
 
-
 nav {
   position: fixed;
   top: 0;
@@ -110,7 +109,7 @@ footer section {
 
   justify-items: center;
   width:80%;
-    margin-left: 10%;
+  margin-left: 10%;
   gap: 20px;
   }
 
@@ -123,27 +122,167 @@ footer img {
   height:300px;
 }
 
+/* ----- Form-only improvements (drop this in after your existing rules) ----- */
+
+/* Container / card for the form */
 form {
-  display: grid;
-  max-width: 200px;
-  gap: 20px;
+  display: grid;                /* keep your grid layout */
+  max-width: 600px;             /* slightly wider for comfort */
+  gap: 16px;                    /* tighter spacing */
+  margin: 1.5rem auto;          /* center on page */
+  padding: 1.25rem;             /* interior spacing */
+  background: linear-gradient(180deg, #ffffff, #fbfdff); /* subtle card */
+  border: 1px solid rgba(2, 6, 23, 0.06);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.06);
+  box-sizing: border-box;
 }
 
-@media (max-width: 700px) {
+/* form field wrapper */
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+/* labels */
+form label {
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+  color: #0f172a;
+  font-size: 0.95rem;
+}
+
+/* unified inputs, selects, textarea */
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="date"],
+form input[type="number"],
+form select,
+form textarea {
+  width: 100%;
+  padding: 0.72rem 0.85rem;
+  border-radius: 10px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: #fff;
+  font-size: 1rem;
+  color: #0f172a;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* textarea sizing */
+form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* subtle icon offset if you add icons later */
+.form-field.input-with input,
+.form-field.input-with .control {
+  padding-left: 38px;
+}
+
+/* helper text and errors */
+form .hint {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-top: 0.35rem;
+}
+form .error {
+  color: #ef4444;
+  font-size: 0.88rem;
+  margin-top: 0.35rem;
+}
+
+/* focus state for accessibility */
+form input:focus,
+form textarea:focus,
+form select:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12);
+  border-color: #4f46e5;
+}
+
+/* actions (submit / buttons) */
+form .form-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 0.25rem;
+}
+
+/* primary submit button inside form only */
+form input[type="submit"],
+form button[type="submit"] {
+  background: linear-gradient(90deg, #F4CE14, #f3d41a); /* matching your header button tone */
+  color: #111827;
+  padding: 0.78rem 1rem;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+  transition: transform 140ms ease, box-shadow 140ms ease;
+}
+
+/* hover/active micro interactions */
+@media (hover: hover) and (pointer: fine) {
+  form input[type="submit"]:hover,
+  form button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.09);
+  }
+  form input[type="submit"]:active,
+  form button[type="submit"]:active {
+    transform: translateY(0);
+  }
+}
+
+/* make submit stretch on small screens */
+@media (max-width: 420px) {
+  form {
+    padding: 0.9rem;
+    width: calc(100% - 2rem);
+    gap: 12px;
+  }
+  form .form-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+  form input[type="submit"],
+  form button[type="submit"] {
+    width: 100%;
+  }
+}
+
+/* reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  form, form input[type="submit"], form button[type="submit"] {
+    transition: none !important;
+  }
+}
+
+
+@media (max-width: 1200px) {
   header section, footer section {
     display: grid;
     grid-auto-flow: row;
   }
 }
 
-@media (min-width: 701px) {
+@media (min-width: 1500px) {
 footer section {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   display:grid;
 }
 header section {
   grid-template-columns: 1fr 1fr;
-  display:grid;
+  display:flex;
   justify-items: center;
+  
 }
 }

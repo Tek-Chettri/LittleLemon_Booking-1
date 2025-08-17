@@ -1,0 +1,111 @@
+/* BookingForm.css */
+
+.booking-form-header {
+  padding: 2rem;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+}
+
+.booking-form-section {
+  max-width: 500px;
+  margin: 50px auto;
+
+  /* visual surface */
+  background: linear-gradient(180deg, #ffffff, #fbfdff); /* subtle white card */
+  border: 1px solid rgba(15, 23, 42, 0.06);            /* soft border */
+  border-radius: 12px;                                  /* rounded corners */
+  padding: 1.25rem;                                     /* interior spacing */
+
+  /* elevation + glass effect */
+  box-shadow: 0 8px 24px rgba(2, 6, 23, 0.06);
+  box-sizing: border-box;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+
+  /* polish */
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+/* subtle hover/active lift (desktop) */
+@media (hover: hover) and (pointer: fine) {
+  .booking-form-section:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 36px rgba(2, 6, 23, 0.08);
+  }
+  .booking-form-section:active { transform: translateY(-2px); }
+}
+
+/* reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .booking-form-section { transition: none; transform: none; }
+}
+
+/* small screens: tighten spacing */
+@media (max-width: 420px) {
+  .booking-form-section {
+    padding: 0.9rem;
+    border-radius: 10px;
+  }
+}
+
+/* optional accent variant — add class "booking-form-section--accent" to enable */
+.booking-form-section--accent {
+  border-left: 4px solid var(--accent, #6366f1);
+  padding-left: calc(1.25rem - 4px);
+}
+
+.booking-form fieldset {
+  border: none;
+  max-width: 500px;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-form label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.booking-form input[type="date"],
+.booking-form select,
+.booking-form input[type="number"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box; /* Ensures padding doesn't affect overall width */
+}
+
+.booking-form input[type="submit"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.booking-form input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Optional: Add some responsiveness */
+@media (max-width: 600px) {
+  .booking-form-header {
+    padding: 1rem;
+  }
+}
